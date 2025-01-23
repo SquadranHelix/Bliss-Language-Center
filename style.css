@@ -12,21 +12,43 @@ header {
     background-color: #BE1E2D;
     color: white;
     padding: 20px;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-header nav ul {
+header .menu-toggle {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 30px;
+    width: 35px;
+}
+
+header .menu-toggle .bar {
+    width: 30px;
+    height: 4px;
+    background-color: white;
+}
+
+nav {
+    display: flex;
+}
+
+nav ul {
     list-style: none;
     padding: 0;
     display: flex;
-    justify-content: center;
+    margin: 0;
 }
 
-header nav ul li {
+nav ul li {
     margin: 0 20px;
 }
 
-header nav a {
+nav a {
     color: white;
     text-decoration: none;
     font-weight: bold;
@@ -34,8 +56,41 @@ header nav a {
     transition: color 0.3s;
 }
 
-header nav a:hover {
+nav a:hover {
     color: #F4EAD2;
+}
+
+/* Menu Hamburger - responsive view */
+@media (max-width: 768px) {
+    nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background-color: #BE1E2D;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    header .menu-toggle {
+        display: flex;
+    }
+
+    nav.visible {
+        display: flex;
+    }
 }
 
 /* Hero Section */
@@ -185,24 +240,4 @@ footer {
 
 footer p {
     margin: 10px 0;
-}
-
-/* Responsiveness */
-@media (max-width: 768px) {
-    .hero-content h1 {
-        font-size: 2rem;
-    }
-
-    .cta-btn {
-        padding: 10px 20px;
-    }
-
-    .course-card {
-        margin: 10px;
-        padding: 15px;
-    }
-
-    #testimonial .testimonial-card {
-        max-width: 90%;
-    }
 }
