@@ -1,116 +1,96 @@
-/* Mengatur Body */
 body {
     font-family: 'Helvetica', sans-serif;
     background-color: #FFFFFF;
     color: #333333;
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
 }
 
-/* Header Section */
 header {
     background-color: #BE1E2D;
     color: white;
     padding: 20px;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+header nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+header nav ul {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center;
+    padding: 0;
 }
 
 header .menu-toggle {
     display: none;
     cursor: pointer;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    height: 30px;
-    width: 35px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
 }
 
 header .menu-toggle .bar {
-    width: 30px;
-    height: 4px;
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px 0;
     background-color: white;
 }
 
-nav {
-    display: flex;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    margin: 0;
-}
-
-nav ul li {
-    margin: 0 20px;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.2rem;
-    transition: color 0.3s;
-}
-
-nav a:hover {
-    color: #F4EAD2;
-}
-
-/* Menu Hamburger - responsive view */
-@media (max-width: 768px) {
-    nav {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 80px;
-        left: 0;
-        width: 100%;
-        background-color: #BE1E2D;
-        padding: 20px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    nav ul {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    nav ul li {
-        margin: 10px 0;
-    }
-
-    header .menu-toggle {
-        display: flex;
-    }
-
-    nav.visible {
-        display: flex;
-    }
-}
-
-/* Hero Section */
 .hero {
     background-image: url('gambar-hero.jpg'); /* Ganti dengan gambar yang sesuai */
     background-size: cover;
-    background-position: center;
     height: 500px;
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
-    text-align: center;
-    padding: 0 20px;
+    margin-top: 80px; /* Agar tidak tertutup header */
+    opacity: 0;
+    animation: fadeIn 1s forwards;
 }
 
 .hero-content h1 {
     font-size: 3rem;
-    font-weight: bold;
-    margin-bottom: 20px;
+}
+
+.course-card {
+    background-color: #F4EAD2;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+}
+
+.course-card h3 {
+    font-size: 1.8rem;
+}
+
+.smooth-scroll {
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .cta-btn {
+        padding: 10px 20px;
+    }
 }
 
 .cta-btn {
@@ -120,117 +100,12 @@ nav a:hover {
     text-align: center;
     border-radius: 5px;
     text-decoration: none;
-    font-weight: bold;
-    display: inline-block;
-    transition: background-color 0.3s;
 }
 
 .cta-btn:hover {
-    background-color: #18727D;
+    background-color: #18727D; /* Hover effect */
 }
 
-/* Bagian Kursus */
-#courses {
-    padding: 40px 20px;
-    background-color: #F4EAD2;
-    text-align: center;
-}
-
-#courses h2 {
-    font-size: 2rem;
-    margin-bottom: 30px;
-    font-weight: bold;
-}
-
-.course-card {
-    background-color: #FFFFFF;
-    padding: 20px;
-    margin: 15px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.course-card h3 {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-}
-
-.course-card p {
-    font-size: 1rem;
-    margin-bottom: 15px;
-}
-
-.course-card:hover {
-    transform: translateY(-10px);
-}
-
-/* Testimonial Section */
-#testimonial {
-    background-color: #DE5A4C;
-    padding: 40px 20px;
-    color: white;
-    text-align: center;
-}
-
-.testimonial-card {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #333333;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.testimonial-card p {
-    font-size: 1.2rem;
-    font-style: italic;
-}
-
-.testimonial-card cite {
-    display: block;
-    margin-top: 10px;
-    font-weight: bold;
-}
-
-/* Daftar Kursus */
-#daftar {
-    padding: 40px 20px;
-    background-color: #F4EAD2;
-    text-align: center;
-}
-
-#daftar h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-}
-
-form input {
-    width: 100%;
-    padding: 15px;
-    margin: 10px 0;
-    border: 2px solid #BE1E2D;
-    border-radius: 5px;
-    font-size: 1rem;
-}
-
-form button {
-    width: 100%;
-    padding: 15px;
-    background-color: #BE1E2D;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-form button:hover {
-    background-color: #18727D;
-}
-
-/* Footer Section */
 footer {
     background-color: #333333;
     color: white;
@@ -238,6 +113,21 @@ footer {
     text-align: center;
 }
 
-footer p {
-    margin: 10px 0;
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+
+/* Animasi smooth scroll untuk bagian */
+.smooth-scroll {
+    transition: opacity 1s ease-in-out;
 }
