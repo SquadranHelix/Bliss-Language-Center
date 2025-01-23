@@ -1,52 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BLISS LANGUAGE CENTER</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <!-- Logo dan Navigasi -->
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#courses">Kursus</a></li>
+                <li><a href="#daftar">Daftar</a></li>
+                <li><a href="#contact">Kontak</a></li>
+            </ul>
+        </nav>
     </header>
+
     <main>
         <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <h1>Mulai Belajar Bahasa Mandarin Sekarang</h1>
+                <a href="#daftar" class="cta-btn">Daftar Sekarang</a>
+            </div>
+        </section>
+
         <!-- Bagian Kursus -->
+        <section id="courses">
+            <h2>Kursus Kami</h2>
+            <div class="course-card">
+                <h3>Kursus 1</h3>
+                <p>Deskripsi singkat kursus...</p>
+                <a href="#daftar" class="cta-btn">Daftar</a>
+            </div>
+            <!-- Ulangi untuk kursus lainnya -->
+        </section>
+
         <!-- Testimonial -->
+        <section id="testimonial">
+            <h2>Apa Kata Mereka?</h2>
+            <div class="testimonial-card">
+                <p>"Kursus ini sangat membantu saya memahami Bahasa Mandarin dengan mudah!"</p>
+                <cite>- Nama Siswa</cite>
+            </div>
+        </section>
+
     </main>
-    <footer>
+
+    <footer id="contact">
         <!-- Footer Kontak dan Informasi -->
+        <p>Kontak: info@kursusmandarin.com</p>
+        <p>&copy; 2025 Kursus Bahasa Mandarin</p>
     </footer>
 </body>
-    <section class="hero">
-    <div class="hero-content">
-        <h1>Mulai Belajar Bahasa Mandarin Sekarang</h1>
-        <a href="#daftar" class="cta-btn">Daftar Sekarang</a>
-    </div>
-</section>
-<section id="courses">
-    <h2>Kursus Kami</h2>
-    <div class="course-card">
-        <h3>Kursus 1</h3>
-        <p>Deskripsi singkat kursus...</p>
-        <a href="#daftar" class="cta-btn">Daftar</a>
-    </div>
-    <!-- Ulangi untuk kursus lainnya -->
-</section>
-<section id="daftar">
-    <h2>Daftar Kursus</h2>
-    <form action="#">
-        <input type="text" placeholder="Nama Lengkap" required>
-        <input type="email" placeholder="Email" required>
-        <input type="tel" placeholder="Nomor Telepon" required>
-        <button type="submit" class="cta-btn">Daftar</button>
-    </form>
-</section>
-<footer>
-    <p>Kontak: info@kursusmandarin.com</p>
-    <p>&copy; 2025 Kursus Bahasa Mandarin</p>
-</footer>
 
 </html>
-
