@@ -1,3 +1,4 @@
+/* Mengatur Body */
 body {
     font-family: 'Helvetica', sans-serif;
     background-color: #FFFFFF;
@@ -6,6 +7,7 @@ body {
     padding: 0;
 }
 
+/* Header Section */
 header {
     background-color: #BE1E2D;
     color: white;
@@ -17,10 +19,14 @@ header nav a {
     color: white;
     margin: 0 15px;
     text-decoration: none;
+    font-weight: bold;
 }
+
+/* Hero Section */
 .hero {
     background-image: url('gambar-hero.jpg'); /* Ganti dengan gambar yang sesuai */
     background-size: cover;
+    background-position: center;
     height: 500px;
     display: flex;
     justify-content: center;
@@ -30,28 +36,30 @@ header nav a {
 
 .hero-content h1 {
     font-size: 3rem;
+    text-align: center;
 }
+
+/* Course Card Styling */
 .course-card {
     background-color: #F4EAD2;
     padding: 20px;
     margin: 10px;
     border-radius: 10px;
     text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .course-card h3 {
     font-size: 1.8rem;
-}
-@media (max-width: 768px) {
-    .hero-content h1 {
-        font-size: 2rem;
-    }
-
-    .cta-btn {
-        padding: 10px 20px;
-    }
+    margin-bottom: 10px;
 }
 
+.course-card p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+/* Call to Action Button Styling */
 .cta-btn {
     background-color: #BE1E2D;
     color: white;
@@ -59,16 +67,47 @@ header nav a {
     text-align: center;
     border-radius: 5px;
     text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
 }
 
 .cta-btn:hover {
     background-color: #18727D; /* Hover effect */
 }
 
+/* Responsiveness for Mobile */
+@media (max-width: 768px) {
+    /* Hero Section for small screens */
+    .hero {
+        height: 300px;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    /* CTA Button for small screens */
+    .cta-btn {
+        padding: 10px 20px;
+    }
+
+    /* Course Card Adjustments */
+    .course-card {
+        padding: 15px;
+        margin: 10px;
+    }
+
+    /* Footer Adjustments */
+    footer {
+        padding: 15px;
+    }
+}
+
+/* Footer Section */
 footer {
     background-color: #333333;
     color: white;
     padding: 20px;
     text-align: center;
 }
-
