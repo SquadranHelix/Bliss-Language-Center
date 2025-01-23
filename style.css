@@ -1,6 +1,6 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #ffffff;
+    font-family: 'Helvetica', sans-serif;
+    background-color: #FFFFFF;
     color: #333333;
     margin: 0;
     padding: 0;
@@ -13,6 +13,12 @@ header {
     text-align: center;
 }
 
+header nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
 .cta-btn {
     background-color: #BE1E2D;
     color: white;
@@ -21,3 +27,15 @@ header {
     border-radius: 5px;
     text-decoration: none;
 }
+
+.cta-btn:hover {
+    background-color: #18727D; /* Hover effect */
+}
+
+footer {
+    background-color: #333333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
