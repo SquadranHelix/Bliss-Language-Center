@@ -1,61 +1,208 @@
-<!DOCTYPE html>
-<html lang="en">
+/* Mengatur Body */
+body {
+    font-family: 'Helvetica', sans-serif;
+    background-color: #FFFFFF;
+    color: #333333;
+    margin: 0;
+    padding: 0;
+}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BLISS LANGUAGE CENTER</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+/* Header Section */
+header {
+    background-color: #BE1E2D;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
 
-<body>
-    <header>
-        <!-- Logo dan Navigasi -->
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#courses">Kursus</a></li>
-                <li><a href="#daftar">Daftar</a></li>
-                <li><a href="#contact">Kontak</a></li>
-            </ul>
-        </nav>
-    </header>
+header nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
 
-    <main>
-        <!-- Hero Section -->
-        <section class="hero" id="home">
-            <div class="hero-content">
-                <h1>Mulai Belajar Bahasa Mandarin Sekarang</h1>
-                <a href="#daftar" class="cta-btn">Daftar Sekarang</a>
-            </div>
-        </section>
+header nav ul li {
+    margin: 0 20px;
+}
 
-        <!-- Bagian Kursus -->
-        <section id="courses">
-            <h2>Kursus Kami</h2>
-            <div class="course-card">
-                <h3>Kursus 1</h3>
-                <p>Deskripsi singkat kursus...</p>
-                <a href="#daftar" class="cta-btn">Daftar</a>
-            </div>
-            <!-- Ulangi untuk kursus lainnya -->
-        </section>
+header nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
 
-        <!-- Testimonial -->
-        <section id="testimonial">
-            <h2>Apa Kata Mereka?</h2>
-            <div class="testimonial-card">
-                <p>"Kursus ini sangat membantu saya memahami Bahasa Mandarin dengan mudah!"</p>
-                <cite>- Nama Siswa</cite>
-            </div>
-        </section>
-    </main>
+header nav a:hover {
+    color: #F4EAD2;
+}
 
-    <footer id="contact">
-        <!-- Footer Kontak dan Informasi -->
-        <p>Kontak: info@kursusmandarin.com</p>
-        <p>&copy; 2025 Kursus Bahasa Mandarin</p>
-    </footer>
-</body>
+/* Hero Section */
+.hero {
+    background-image: url('gambar-hero.jpg'); /* Ganti dengan gambar yang sesuai */
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 0 20px;
+}
 
-</html>
+.hero-content h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.cta-btn {
+    background-color: #BE1E2D;
+    color: white;
+    padding: 15px 30px;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.cta-btn:hover {
+    background-color: #18727D;
+}
+
+/* Bagian Kursus */
+#courses {
+    padding: 40px 20px;
+    background-color: #F4EAD2;
+    text-align: center;
+}
+
+#courses h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.course-card {
+    background-color: #FFFFFF;
+    padding: 20px;
+    margin: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.course-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.course-card p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.course-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Testimonial Section */
+#testimonial {
+    background-color: #DE5A4C;
+    padding: 40px 20px;
+    color: white;
+    text-align: center;
+}
+
+.testimonial-card {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #333333;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-card p {
+    font-size: 1.2rem;
+    font-style: italic;
+}
+
+.testimonial-card cite {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Daftar Kursus */
+#daftar {
+    padding: 40px 20px;
+    background-color: #F4EAD2;
+    text-align: center;
+}
+
+#daftar h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+form input {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: 2px solid #BE1E2D;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+form button {
+    width: 100%;
+    padding: 15px;
+    background-color: #BE1E2D;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #18727D;
+}
+
+/* Footer Section */
+footer {
+    background-color: #333333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+footer p {
+    margin: 10px 0;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .cta-btn {
+        padding: 10px 20px;
+    }
+
+    .course-card {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    #testimonial .testimonial-card {
+        max-width: 90%;
+    }
+}
