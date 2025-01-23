@@ -17,10 +17,10 @@
         </div>
         <nav id="menu" class="hidden">
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#courses">Kursus</a></li>
-                <li><a href="#daftar">Daftar</a></li>
-                <li><a href="#contact">Kontak</a></li>
+                <li><a href="#home" class="scroll-link">Home</a></li>
+                <li><a href="#courses" class="scroll-link">Kursus</a></li>
+                <li><a href="#daftar" class="scroll-link">Daftar</a></li>
+                <li><a href="#contact" class="scroll-link">Kontak</a></li>
             </ul>
         </nav>
     </header>
@@ -35,7 +35,7 @@
         </section>
 
         <!-- Bagian Kursus -->
-        <section id="courses">
+        <section id="courses" class="smooth-scroll">
             <h2>Kursus Kami</h2>
             <div class="course-card">
                 <h3>Kursus 1</h3>
@@ -45,7 +45,7 @@
         </section>
 
         <!-- Daftar Kursus -->
-        <section id="daftar">
+        <section id="daftar" class="smooth-scroll">
             <h2>Daftar Kursus</h2>
             <form action="#">
                 <input type="text" placeholder="Nama Lengkap" required>
@@ -56,15 +56,30 @@
         </section>
     </main>
 
-    <footer id="contact">
+    <footer id="contact" class="smooth-scroll">
         <p>Kontak: info@kursusmandarin.com</p>
         <p>&copy; 2025 Kursus Bahasa Mandarin</p>
     </footer>
 
     <script>
         // Menangani klik tombol menu hamburger
-        document.getElementById('menu-toggle').addEventListener('click', function() {
+        document.getElementById('menu-toggle').addEventListener('click', function () {
             document.getElementById('menu').classList.toggle('visible');
+        });
+
+        // Menambahkan animasi smooth scroll saat menu dipilih
+        const links = document.querySelectorAll('.scroll-link');
+        links.forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+
+                window.scrollTo({
+                    top: targetElement.offsetTop - 50, // memberi ruang agar bagian atas tidak tertutup
+                    behavior: 'smooth'
+                });
+            });
         });
     </script>
 </body>
