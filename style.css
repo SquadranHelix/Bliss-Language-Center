@@ -11,7 +11,7 @@ body {
 /* Header Styles */
 header {
     background-color: #BE1E2D; /* Merah Cerah */
-    color: white;
+    color: red;
     padding: 20px;
     text-align: center;
     position: fixed;
