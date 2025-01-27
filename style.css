@@ -1,167 +1,138 @@
-/* Global Styles */
+/* General Styles */
 body {
-    font-family: 'Helvetica', sans-serif;
-    background-color: #FFFFFF;
-    color: #333333;
+    font-family: 'Helvetica', sans-serif; /* Mengatur font utama */
+    background-color: #FFFFFF; /* Warna latar belakang utama */
+    color: #333333; /* Warna teks utama */
     margin: 0;
     padding: 0;
-    line-height: 1.6;
+    line-height: 1.6; /* Menambahkan spasi antar-baris untuk kenyamanan baca */
 }
 
-/* Sidebar Styles */
-aside#sidebar {
-    position: fixed;
+/* Header Styles */
+header {
+    background-color: #BE1E2D; /* Warna merah untuk header */
+    color: white;
+    padding: 20px;
+    text-align: center; /* Header konten berada di tengah */
+    position: fixed; /* Membuat header tetap di atas saat scroll */
     top: 0;
-    left: 0;
-    width: 250px;
-    height: 100%;
-    background-color: #BE1E2D;
-    color: white;
-    transform: translateX(-100%);
-    transition: transform 0.3s ease-in-out;
-    z-index: 1000;
+    width: 100%;
+    z-index: 10;
 }
 
-aside#sidebar.open {
-    transform: translateX(0);
+/* Navigation Styles */
+header nav {
+    display: flex;
+    justify-content: center; /* Posisi menu di tengah */
+    gap: 15px; /* Memberikan jarak antar menu */
 }
 
-aside#sidebar .menu-toggle {
-    position: absolute;
-    top: 20px;
-    right: -50px;
-    background-color: #BE1E2D;
+header nav a {
     color: white;
-    border: none;
-    padding: 10px 15px;
-    font-size: 20px;
-    cursor: pointer;
-    border-radius: 0 5px 5px 0;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 5px;
     transition: background-color 0.3s ease;
 }
 
-aside#sidebar .menu-toggle:hover {
-    background-color: #18727D;
+header nav a:hover {
+    background-color: #18727D; /* Warna hover */
 }
 
-aside#sidebar nav {
-    margin-top: 60px;
+/* Hero Section Styles */
+.hero {
+    background-image: url('gambar-hero.jpg'); /* Ganti dengan gambar yang sesuai */
+    background-size: cover;
+    background-position: center;
+    height: 500px;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-}
-
-aside#sidebar nav a {
     color: white;
-    text-decoration: none;
-    padding: 15px 20px;
-    width: 100%;
     text-align: center;
-    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-aside#sidebar nav a:hover {
-    background-color: #18727D;
-    transform: scale(1.05);
+.hero h1 {
+    font-size: 3rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    animation: fadeIn 1.5s ease-in-out;
 }
 
-/* Main Content */
-#main-content {
-    margin-left: 0;
+/* Course Card Styles */
+.course-card {
+    background-color: #F4EAD2; /* Warna latar belakang kartu */
     padding: 20px;
-    transition: margin-left 0.3s ease-in-out;
-}
-
-#main-content section {
-    margin-bottom: 40px;
-    padding: 20px;
+    margin: 15px;
     border-radius: 10px;
-    background-color: #F4EAD2;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Efek bayangan */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-#main-content section:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+.course-card:hover {
+    transform: translateY(-5px); /* Animasi hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Section-Specific Styles */
-#home {
-    background: linear-gradient(135deg, #BE1E2D, #DE5A4C);
-    color: white;
-    text-align: center;
-}
-
-#home h1 {
-    font-size: 2.5rem;
+.course-card h3 {
+    font-size: 1.8rem;
     margin-bottom: 10px;
 }
 
-#home p {
-    font-size: 1.2rem;
+.course-card p {
+    font-size: 1rem;
+    color: #555555;
 }
 
-#courses .course {
-    padding: 15px;
-    border: 1px solid #BE1E2D;
-    border-radius: 8px;
-    text-align: center;
-    background-color: white;
-    margin-bottom: 10px;
-    transition: transform 0.3s ease;
-}
-
-#courses .course:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-/* Buttons */
-button, input[type="submit"] {
+/* Button Styles */
+.cta-btn {
     background-color: #BE1E2D;
     color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 1rem;
+    padding: 15px 30px;
+    text-align: center;
     border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-button:hover, input[type="submit"]:hover {
-    background-color: #18727D;
+.cta-btn:hover {
+    background-color: #18727D; /* Warna hover */
+    transform: scale(1.05); /* Efek membesar saat hover */
 }
 
-/* Forms */
-form input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #BE1E2D;
-    border-radius: 5px;
-    font-size: 1rem;
-}
-
-form input:focus {
-    outline: none;
-    border-color: #18727D;
-}
-
-/* Footer */
+/* Footer Styles */
 footer {
-    background-color: #333333;
+    background-color: #333333; /* Warna latar belakang footer */
     color: white;
     padding: 20px;
     text-align: center;
     font-size: 0.9rem;
+    margin-top: 20px;
 }
 
-/* Animations */
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem; /* Ukuran font hero lebih kecil untuk layar kecil */
+    }
+
+    .course-card {
+        margin: 10px; /* Margin lebih kecil untuk layar kecil */
+    }
+
+    .cta-btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Animation Keyframes */
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(10px);
     }
     to {
         opacity: 1;
@@ -169,25 +140,23 @@ footer {
     }
 }
 
-section {
-    animation: fadeIn 0.8s ease-in-out;
+/* Grammarly Desktop Integration Styles */
+div.grammarly-desktop-integration {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    aside#sidebar {
-        width: 200px;
-    }
-
-    #home h1 {
-        font-size: 2rem;
-    }
-
-    #main-content section {
-        padding: 15px;
-    }
-
-    aside#sidebar .menu-toggle {
-        right: -40px;
-    }
+div.grammarly-desktop-integration:before {
+    content: attr(data-content); /* Menyisipkan konten berdasarkan atribut data */
 }
