@@ -1,39 +1,193 @@
+/* Global Styles */
 body {
     font-family: 'Helvetica', sans-serif;
+    background-color: #FFFFFF;
+    color: #333333;
     margin: 0;
     padding: 0;
-    display: flex;
+    line-height: 1.6;
 }
-#sidebar {
-    background-color: #BE1E2D;
-    color: #FFFFFF;
-    width: 250px;
+
+/* Sidebar Styles */
+aside#sidebar {
     position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
     height: 100%;
-    padding: 20px;
-    transform: translateX(-250px);
-    transition: transform 0.3s ease;
+    background-color: #BE1E2D;
+    color: white;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
 }
-#sidebar .menu-toggle {
-    cursor: pointer;
-    margin-bottom: 20px;
-    font-size: 1.5rem;
-}
-#sidebar.open {
+
+aside#sidebar.open {
     transform: translateX(0);
 }
-#nav-links a {
-    color: #FFFFFF;
+
+aside#sidebar .menu-toggle {
+    position: absolute;
+    top: 20px;
+    right: -50px;
+    background-color: #BE1E2D;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+    transition: background-color 0.3s ease;
+}
+
+aside#sidebar .menu-toggle:hover {
+    background-color: #18727D;
+}
+
+aside#sidebar nav {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+aside#sidebar nav a {
+    color: white;
     text-decoration: none;
-    display: block;
-    margin: 10px 0;
+    padding: 15px 20px;
+    width: 100%;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+aside#sidebar nav a:hover {
+    background-color: #18727D;
+    transform: scale(1.05);
+}
+
+/* Main Content */
+#main-content {
+    margin-left: 0;
+    padding: 20px;
+    transition: margin-left 0.3s ease-in-out;
+}
+
+#main-content section {
+    margin-bottom: 40px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #F4EAD2;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#main-content section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Section-Specific Styles */
+#home {
+    background: linear-gradient(135deg, #BE1E2D, #DE5A4C);
+    color: white;
+    text-align: center;
+}
+
+#home h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+#home p {
     font-size: 1.2rem;
 }
-#main-content {
-    margin-left: 250px;
-    padding: 20px;
-    transition: margin-left 0.3s ease;
+
+#courses .course {
+    padding: 15px;
+    border: 1px solid #BE1E2D;
+    border-radius: 8px;
+    text-align: center;
+    background-color: white;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
 }
-#main-content section {
-    margin-bottom: 50px;
+
+#courses .course:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Buttons */
+button, input[type="submit"] {
+    background-color: #BE1E2D;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover, input[type="submit"]:hover {
+    background-color: #18727D;
+}
+
+/* Forms */
+form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #BE1E2D;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+form input:focus {
+    outline: none;
+    border-color: #18727D;
+}
+
+/* Footer */
+footer {
+    background-color: #333333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+section {
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    aside#sidebar {
+        width: 200px;
+    }
+
+    #home h1 {
+        font-size: 2rem;
+    }
+
+    #main-content section {
+        padding: 15px;
+    }
+
+    aside#sidebar .menu-toggle {
+        right: -40px;
+    }
 }
