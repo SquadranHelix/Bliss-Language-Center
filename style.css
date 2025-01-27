@@ -1,8 +1,8 @@
 /* Global Styles */
 body {
     font-family: 'Helvetica', sans-serif;
-    background-color: #FFFFFF;
-    color: #333333;
+    background-color: #FFFFFF; /* Putih */
+    color: #333333; /* Abu-Abu Tua */
     margin: 0;
     padding: 0;
     line-height: 1.6;
@@ -10,7 +10,7 @@ body {
 
 /* Header Styles */
 header {
-    background-color: #BE1E2D;
+    background-color: #BE1E2D; /* Merah Cerah */
     color: white;
     padding: 20px;
     text-align: center;
@@ -36,12 +36,39 @@ header nav a {
 }
 
 header nav a:hover {
-    background-color: #18727D;
+    background-color: #18727D; /* Hijau Tosca */
+}
+
+/* Sidebar Styles */
+#sidebar {
+    width: 200px;
+    background-color: #BE1E2D; /* Merah Cerah */
+    color: white;
+    height: 100vh;
+    position: fixed;
+    transition: transform 0.3s ease;
+    transform: translateX(-100%);
+}
+
+#sidebar.active {
+    transform: translateX(0);
+}
+
+.menu-toggle {
+    cursor: pointer;
+    padding: 10px;
+}
+
+/* Main Content Styles */
+#main-content {
+    margin-left: 200px; /* Menyesuaikan dengan lebar sidebar */
+    padding: 20px;
+    flex-grow: 1;
 }
 
 /* Hero Section */
 .hero {
-    background-image: url('gambar-hero.jpg');
+    background-image: url('gambar-hero.jpg'); /* Ganti dengan gambar yang sesuai */
     background-size: cover;
     background-position: center;
     height: 500px;
@@ -58,7 +85,47 @@ header nav a:hover {
     animation: fadeIn 1.5s ease-in-out;
 }
 
-/* Inline Style Sheet 2 */
+/* Call to Action Button */
+.cta-button {
+    background-color: #BE1E2D; /* Merah Cerah */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #18727D; /* Hijau Tosca */
+}
+
+/* Course Section */
+.course {
+    margin: 20px 0;
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form input {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #333333;
+    border-radius: 5px;
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #333333; /* Abu-Abu Tua */
+    color: white;
+}
+
+/* Additional Styles */
 div.grammarly-desktop-integration {
     position: absolute;
     width: 1px;
@@ -75,19 +142,6 @@ div.grammarly-desktop-integration {
     user-select: none;
 }
 
-div.grammarly-desktop-integration:before {
-    content: attr(data-content);
-}
-
-/* Inline Style Sheet 3 */
-.tippy-box[data-animation=fade][data-state=hidden] {
-    opacity: 0;
-}
-
-[data-tippy-root] {
-    max-width: calc(100vw - 10px);
-}
-
 .tippy-box {
     position: relative;
     background-color: #333;
@@ -100,41 +154,10 @@ div.grammarly-desktop-integration:before {
     transition-property: transform, visibility, opacity;
 }
 
-.tippy-box[data-placement^=top] > .tippy-arrow {
-    bottom: 0;
-}
-
-.tippy-box[data-placement^=top] > .tippy-arrow:before {
-    bottom: -7px;
-    left: 0;
-    border-width: 8px 8px 0;
-    border-top-color: initial;
-    transform-origin: center top;
-}
-
-.tippy-box[data-placement^=bottom] > .tippy-arrow {
-    top: 0;
-}
-
-.tippy-box[data-placement^=bottom] > .tippy-arrow:before {
-    top: -7px;
-    left: 0;
-    border-width: 0 8px 8px;
-    border-bottom-color: initial;
-    transform-origin: center bottom;
-}
-
 .tippy-arrow {
     width: 16px;
     height: 16px;
     color: #333;
-}
-
-.tippy-arrow:before {
-    content: "";
-    position: absolute;
-    border-color: transparent;
-    border-style: solid;
 }
 
 .tippy-content {
@@ -143,20 +166,6 @@ div.grammarly-desktop-integration:before {
     z-index: 1;
 }
 
-/* Inline Style Sheet 4 */
-img:is([sizes="auto" i], [sizes^="auto," i]) {
-    contain-intrinsic-size: 3000px 1500px; /* Mengatur ukuran intrinsik untuk gambar */
-}
-
-/* Inline Style Sheet 5 */
-img.wp-smiley, img.emoji {
-    display: inline !important;
-    border: none !important;
-    box-shadow: none !important;
-    height: 1em !important;
-    width: 1em !important;
-    margin: 0 0.07em !important;
-    vertical-align: -0.1em !important;
-    background: none !important;
-    padding: 0 !important;
-}
+/* Responsive Styles */
+@media (max-width: 768px) {
+   
